@@ -24,29 +24,16 @@
 
 <body>
     <div id="wrapper">
-        <header>
-            <div class="head">
-                <a class="logo" href="index.html"><img src="images/book_logo.jpg" alt="Book Logo"></a>
-                <h1 class="site-title">Conestoga Books</h1>
-            </div>
-        </header>
-
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="products.html" class="active">Books</a></li>
-                <li><a href="cart.html" class="active">Cart</a></li>
-            </ul>
-        </nav>
+    <?php include("header.php")?>
 
 
         <main class="overflow">
             <div class="container">
                 <br>
                 <div id="slideshow">
-                    <img src="images/books_slide1.jpg" width="100%" height="600">
-                    <img src="images/books_slide2.jpg" width="100%" height="600">
-                    <img src="images/books_slide3.jpg" width="100%" height="600">
+                    <img src="images/books_slide1.jpg" width="100%" height="400">
+                    <img src="images/books_slide2.jpg" width="100%" height="400">
+                    <img src="images/books_slide3.jpg" width="100%" height="400">
                 </div>
             </div>
             <h1>Importance of Books</h1>
@@ -60,32 +47,7 @@
             </div>
         </main>
 
-        <footer>
-            <div class="footer_container">
-                <div class="footer_align">
-                    <p class="footer">Follow Us On</p>
-                    <a href=""><img src="images/facebook.png" height="25px" width="25px"></a>
-                    <a href=""><img src="images/instagram.png" height="25px" width="25px"></a>
-                    <a href=""><img src="images/whatsapp.png" height="25px" width="25px"></a>
-
-                </div>
-
-                <div class="footer_align">
-                    <p class="footer">Location</p>
-                    <p class="justify">1190 King St E, Kitchener, ON N2G 2N4</p>
-
-                </div>
-
-
-                <div class="footer_align">
-                    <p class="footer">Newsletter</p>
-                    <p class="justify">Enter your email address to get <br>the information of latest Books and Magazines  </p>
-                </div>
-
-            </div>
-            <p class="i_allign">Copyright &copy; | All rights reserved</p>
-
-        </footer>
+        <?php include("footer.php")?>
 
     </div>
 </body>
