@@ -1,10 +1,8 @@
 <?php
 session_start();
-
-if (isset($_SESSION['selectedBook']))
+if (isset($_SESSION['bookId']))
   {
-    $book= $_SESSION['selectedBook'] ;
-    
+    $book= $_SESSION['bookId'] ;
   }
  ?> 
 <!DOCTYPE>
@@ -72,6 +70,7 @@ if (isset($_SESSION['selectedBook']))
                                                 </span>
                                             </h4>
                                             <?php
+                                                
                                                 require("mysqli_connect.php");
                                                 $q1="SELECT * FROM books where pid=$book";
                                                 $r1=mysqli_query($connection,$q1);
@@ -82,7 +81,11 @@ if (isset($_SESSION['selectedBook']))
                                                         echo' <hr>
                                                         <p>Total <span class="price" style="color:black"><b>Rs '  . $row["Price"].'</b></span></p>';
                                                     }
+                                                   
                                                 }
+                                                else {
+                                                    echo mysqli_error($connection);
+                                                } 
                                             ?>    
                                         </div>
                                     </div>
@@ -164,9 +167,9 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
             $message="Order successfull";
             echo "<script type='text/javascript'>alert('$message');</script>";
             $q3="UPDATE books 
-            SET Quantity = Quantity - 1
+            SET Inventory = Inventory - 1
             WHERE PId = $book
-            and Quantity > 0";
+            and Inventory > 0";
             $r2 = mysqli_query($connection,$q3);
             ?>
             <script type='text/javascript'>window.location.href = 'index.php';</script>;
